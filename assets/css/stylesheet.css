@@ -18,3 +18,8 @@ body{
 .h1{
     background-color: peachpuff;
 }
+
+.timer{
+    background-color: black;
+    color: peachpuff;
+}

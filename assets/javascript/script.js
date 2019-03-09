@@ -1,28 +1,52 @@
-function check(){
-    
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    setInterval(function () {
+        minutes = parseInt(timer / 60, 10)
+        seconds = parseInt(timer % 60, 10);
 
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        }
+    }, 1000);
 }
 
-var clockRunning = false;
-var time = 0;
+window.onload = function () {
+    var fiveMinutes = 60 * .5,
+        display = document.querySelector('#time');
+    startTimer(fiveMinutes, display);
+};
 
-setTimeout(thirtySeconds, 1000 * 30);
-window.onload = function thirtySeconds() {
+
+// function check(){
+    
+
+// }
+
+// var clockRunning = false;
+// var time = 0;
+
+// setTimeout(thirtySeconds, 1000 * 30);
+// window.onload = function thirtySeconds() {
  
-  }
+//   }
 
-  function reset() {
+//   function reset() {
 
-    time = 0;
-    lap = 1;
-    function start() {
-        if (!clockRunning) {
-          $("#start").on("click", function() {
+//     time = 0;
+//     lap = 1;
+//     function start() {
+//         if (!clockRunning) {
+//           $("#start").on("click", function() {
       
-          }
-          )
-        }
-      }
+//           }
+//           )
+//         }
+//       }
 
 // var score = 0;
 // for(var i=0; i <questions.length; i++) {
